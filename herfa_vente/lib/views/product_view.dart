@@ -19,13 +19,23 @@ class ProductsViews extends StatelessWidget {
               ),
               itemCount: products.length,
               itemBuilder: (context, index) {
-                return buildProductCard(products[index]);
+                return product_card(product: products[index]);
               },
             ),
     );
   }
-  
-Widget buildProductCard(Product product) {
+}
+
+class product_card extends StatelessWidget {
+  const product_card({
+    super.key,
+    required this.product,
+  });
+
+  final Product product;
+
+  @override
+  Widget build(BuildContext context) {
     return Card(
       elevation: 5.0,
       shape: RoundedRectangleBorder(

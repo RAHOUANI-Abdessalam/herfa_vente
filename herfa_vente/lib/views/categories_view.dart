@@ -1,25 +1,8 @@
 //categories codes////////////////////////////////////////////////////////////////////////////////
 import 'package:flutter/material.dart';
+import 'package:herfa_vente/controllers/category_controller.dart';
 
 class CategoryList extends StatelessWidget {
-  final List<Map<String, String>> categoryList = [
-    {"name": "Category 1", "image_path": 'images/quincaillerie.jpg'},
-    {"name": "Category 2", "image_path": 'images/menuisier.jpg'},
-    {"name": "Category 3", "image_path": 'images/peinture.jpg'},
-    {"name": "Category 4", "image_path": 'images/pub_image.jpg'},
-    {"name": "Category 5", "image_path": 'images/pub_image.jpg'},
-    {"name": "Category 6", "image_path": 'images/pub_image.jpg'},
-    {"name": "Category 7", "image_path": 'images/piece_auto.jpg'},
-    {"name": "Category 8", "image_path": 'images/pub_image.jpg'},
-    {"name": "Category 9", "image_path": 'images/quincaillerie.jpg'},
-    {"name": "Category 10", "image_path": 'images/pub_image.jpg'},
-    {"name": "Category 11", "image_path": 'images/pub_image.jpg'},
-    {"name": "Category 12", "image_path": 'images/pub_image.jpg'},
-    {"name": "Category 13", "image_path": 'images/pub_image.jpg'},
-    {"name": "Category 14", "image_path": 'images/pub_image.jpg'},
-    // Add more categories as needed
-  ];
-
    CategoryList({super.key});
 
   @override

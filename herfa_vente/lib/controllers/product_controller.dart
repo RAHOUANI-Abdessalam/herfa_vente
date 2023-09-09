@@ -2,49 +2,49 @@ import 'package:herfa_vente/models/product.dart';
 
 List<Product> products = [
   Product(
-    name: "Product 1",
+    name: "Marteau",
     category: "Category A",
     price: 1999,
     imageUrl: "images/pub_image.jpg",
   ),
   Product(
-    name: "Product 2",
+    name: "Tournevis",
     category: "Category B",
     price: 2999,
     imageUrl: "images/pub_image.jpg",
   ),
   Product(
-    name: "Product 3",
+    name: "Clé à molette",
     category: "Category A",
     price: 1599,
     imageUrl: "images/pub_image.jpg",
   ),
   Product(
-    name: "Product 4",
+    name: "Pince",
     category: "Category C",
     price: 2499,
     imageUrl: "images/pub_image.jpg",
   ),
   Product(
-    name: "Product 5",
+    name: "Ciseaux à bois",
     category: "Category B",
     price: 3999,
     imageUrl: "images/pub_image.jpg",
   ),
   Product(
-    name: "Product 6",
+    name: "Peinture murale",
     category: "Category A",
     price: 999,
     imageUrl: "images/pub_image.jpg",
   ),
   Product(
-    name: "Product 7",
+    name: "Papier de verre",
     category: "Category C",
     price: 4499,
     imageUrl: "images/pub_image.jpg",
   ),
   Product(
-    name: "Product 8",
+    name: "Disjoncteurs",
     category: "Category B",
     price: 3499,
     imageUrl: "images/pub_image.jpg",

@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:herfa_vente/views/product_view.dart';
-import 'package:herfa_vente/views/vente_categories.dart';
+import 'package:herfa_vente/views/categories_view.dart';
 
 // ignore: must_be_immutable
 class HomeScreen extends StatelessWidget {
