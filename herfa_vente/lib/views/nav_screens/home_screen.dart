@@ -1,7 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:herfa_vente/views/product_view.dart';
-import 'package:herfa_vente/views/categories_view.dart';
+import 'package:herfa_vente/controllers/product_controller.dart';
+import 'package:herfa_vente/models/product.dart';
+import 'package:herfa_vente/views/product_views/product_view.dart';
+import 'package:herfa_vente/views/categories_view/categories_view.dart';
 
 // ignore: must_be_immutable
 class HomeScreen extends StatelessWidget {
@@ -16,6 +18,8 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<Product>? usedProducts =
+        products.where((element) => element.productStatus == "used").toList();
     return Container(
       color: Colors.white,
       child: ListView(
@@ -35,9 +39,9 @@ class HomeScreen extends StatelessWidget {
                 .toList(),
             options: CarouselOptions(
               autoPlay: true,
-              aspectRatio: 2.0,
+              aspectRatio: 2.4,
               enlargeCenterPage: true,
-              viewportFraction: 0.8, // Adjust this value for spacing
+              viewportFraction: 0.7, // Adjust this value for spacing
             ),
           ),
           Padding(
@@ -87,7 +91,24 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ]),
           ),
-          const ProductsViews(),
+          Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: GridView.builder(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              //shrinkWrap: true,              ////////////////////////////////////////////////////////
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2, // 2 columns
+                childAspectRatio: 0.8, // Adjust as needed
+              ),
+              itemCount: usedProducts.length,
+              itemBuilder: (context, index) {
+                return product_card(product: usedProducts[index]);
+          
+                //query == "" ? product_card(product: products[index]):
+              },
+            ),
+          ),
         ],
       ),
     );

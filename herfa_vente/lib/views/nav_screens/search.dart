@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:herfa_vente/controllers/product_controller.dart';
 import 'package:herfa_vente/models/product.dart';
-import 'package:herfa_vente/views/product_view.dart';
+import 'package:herfa_vente/views/product_views/product_view.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
@@ -27,7 +27,7 @@ class ProductSearch extends SearchDelegate {
           query = "";
         },
         icon: Icon(Icons.close),
-        color: Colors.blue,
+        color: Theme.of(context).primaryColor,
       )
     ];
   }
@@ -40,21 +40,61 @@ class ProductSearch extends SearchDelegate {
         },
         icon: Icon(
           Icons.arrow_back,
-          color: Colors.blue,
+        color: Theme.of(context).primaryColor,
         ));
   }
 
   @override
   Widget buildResults(BuildContext context) {
-    return SizedBox(
-      width: 0,
-    );
+    List<Product>? filtreProducts = products.where((element) => element.name.toLowerCase().startsWith(query.toLowerCase())).toList();
+    return SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 15.0,left: 15.0),
+                  child: Text(
+                    "Results",
+                    style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black),
+                  ),
+                )
+              ],
+            ),
+            Padding(
+      padding: const EdgeInsets.all(15.0),
+      child: GridView.builder(
+        shrinkWrap: true,
+          physics: NeverScrollableScrollPhysics(),
+          //shrinkWrap: true,              ////////////////////////////////////////////////////////
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2, // 2 columns
+                childAspectRatio: 0.8, // Adjust as needed
+              ),
+              itemCount: query == "" ? products.length : filtreProducts.length,
+              itemBuilder: (context, index) {
+                if(query == ""){
+                  return product_card(product: products[index]);
+                }else{
+                  return product_card(product: filtreProducts[index]);
+                }
+                //query == "" ? product_card(product: products[index]):
+                
+              },
+            ),
+    ),
+          ],
+        ));
   }
 
   @override
   Widget buildSuggestions(BuildContext context) {
 
-    List<Product>? filtreProducts = products.where((element) => element.name.startsWith(query)).toList();
+    List<Product>? filtreProducts = products.where((element) => element.name.toLowerCase().startsWith(query.toLowerCase())).toList();
     print("Number of filtered products: ${filtreProducts.length}");
     
     return SingleChildScrollView(
