@@ -4,7 +4,7 @@ List<Product> products = [
   Product(
     id: 0,
     name: "Marteau",
-    category: "Category A",
+    category: "Plombier",
     price: 1999,
     imageUrl: "images/pub_image.jpg",
     images: [
@@ -20,7 +20,7 @@ List<Product> products = [
   Product(
     id: 1,
     name: "Tournevis",
-    category: "Category B",
+    category: "Électricité",
     price: 2999,
     imageUrl: "images/menuisier.jpg",
     images: [
@@ -36,7 +36,7 @@ List<Product> products = [
   Product(
     id: 2,
     name: "Clé à molette",
-    category: "Category A",
+    category: "Pienture",
     price: 1599,
     imageUrl: "images/pub_image.jpg",
     images: [
@@ -52,7 +52,7 @@ List<Product> products = [
   Product(
     id: 3,
     name: "Pince",
-    category: "Category C",
+    category: "placo",
     price: 2499,
     imageUrl: "images/menuisier.jpg",
     images: [
@@ -68,7 +68,7 @@ List<Product> products = [
   Product(
     id: 4,
     name: "Ciseaux à bois",
-    category: "Category B",
+    category: "Droguerie",
     price: 3999,
     imageUrl: "images/pub_image.jpg",
     images: [
@@ -84,7 +84,7 @@ List<Product> products = [
   Product(
     id: 5,
     name: "Peinture murale",
-    category: "Category A",
+    category: "Outillage",
     price: 999,
     imageUrl: "images/pub_image.jpg",
     images: [
@@ -100,7 +100,7 @@ List<Product> products = [
   Product(
     id: 6,
     name: "Papier de verre",
-    category: "Category C",
+    category: "Outiels sécurité",
     price: 4499,
     imageUrl: "images/pub_image.jpg",
     images: [
@@ -116,7 +116,7 @@ List<Product> products = [
   Product(
     id: 7,
     name: "Disjoncteurs",
-    category: "Category B",
+    category: "Automobil",
     price: 3499,
     imageUrl: "images/pub_image.jpg",
     images: [
@@ -131,8 +131,8 @@ List<Product> products = [
   ),
   Product(
     id: 8,
-    name: "Disjoncteurs",
-    category: "Category B",
+    name: "Scie circulaire",
+    category: "agriculture",
     price: 3499,
     imageUrl: "images/menuisier.jpg",
     images: [
@@ -147,8 +147,8 @@ List<Product> products = [
   ),
   Product(
     id: 9,
-    name: "Disjoncteurs",
-    category: "Category B",
+    name: "Tôle ondulée",
+    category: "Construction",
     price: 3499,
     imageUrl: "images/pub_image.jpg",
     images: [
@@ -163,8 +163,8 @@ List<Product> products = [
   ),
   Product(
     id: 10,
-    name: "Disjoncteurs",
-    category: "Category B",
+    name: "Charnières",
+    category: "Central a beton",
     price: 3499,
     imageUrl: "images/menuisier.jpg",
     images: [
@@ -179,8 +179,88 @@ List<Product> products = [
   ),
   Product(
     id: 11,
-    name: "Disjoncteurs",
-    category: "Category B",
+    name: "Lunettes de protection",
+    category: "Métal",
+    price: 3499,
+    imageUrl: "images/pub_image.jpg",
+    images: [
+      "images/pub_image.jpg",
+      "images/menuisier.jpg",
+      "images/pub_image.jpg",
+    ],
+    ownerStatus: "artisant",
+    productStatus: "not_used",
+    details:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
+  ),
+    Product(
+    id: 12,
+    name: "Genouillères",
+    category: "Materion d'ocassion",
+    price: 3499,
+    imageUrl: "images/pub_image.jpg",
+    images: [
+      "images/pub_image.jpg",
+      "images/menuisier.jpg",
+      "images/pub_image.jpg",
+    ],
+    ownerStatus: "artisant",
+    productStatus: "not_used",
+    details:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
+  ),
+    Product(
+    id: 13,
+    name: "Compas",
+    category: "Autres",
+    price: 3499,
+    imageUrl: "images/pub_image.jpg",
+    images: [
+      "images/pub_image.jpg",
+      "images/menuisier.jpg",
+      "images/pub_image.jpg",
+    ],
+    ownerStatus: "artisant",
+    productStatus: "not_used",
+    details:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
+  ),
+    Product(
+    id: 14,
+    name: "Joints d'étanchéité",
+    category: "Autres",
+    price: 3499,
+    imageUrl: "images/pub_image.jpg",
+    images: [
+      "images/pub_image.jpg",
+      "images/menuisier.jpg",
+      "images/pub_image.jpg",
+    ],
+    ownerStatus: "artisant",
+    productStatus: "not_used",
+    details:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
+  ),
+    Product(
+    id: 15,
+    name: "Tondeuse à gazon",
+    category: "Autres",
+    price: 3499,
+    imageUrl: "images/pub_image.jpg",
+    images: [
+      "images/pub_image.jpg",
+      "images/menuisier.jpg",
+      "images/pub_image.jpg",
+    ],
+    ownerStatus: "artisant",
+    productStatus: "not_used",
+    details:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
+  ),
+    Product(
+    id: 16,
+    name: "Brouette",
+    category: "Autres",
     price: 3499,
     imageUrl: "images/pub_image.jpg",
     images: [

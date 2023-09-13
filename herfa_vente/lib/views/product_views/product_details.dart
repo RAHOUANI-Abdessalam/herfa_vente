@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:herfa_vente/controllers/product_controller.dart';
+import 'package:herfa_vente/controllers/cart.dart';
+import 'package:herfa_vente/views/home_appbar.dart';
 import 'package:herfa_vente/views/product_views/product_view.dart';
+import 'package:provider/provider.dart';
 
 class ProductDetails extends StatefulWidget {
   const ProductDetails({super.key});
@@ -13,10 +16,15 @@ class _ProductDetailsState extends State<ProductDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).primaryColor,
-        title: const Text("Product Details"),
-      ),
+      appBar: PreferredSize(
+          preferredSize:
+              Size.fromHeight(kToolbarHeight), // Set the preferred height
+          child: MyAppBar(),
+        ),
+      // AppBar(
+      //   backgroundColor: Theme.of(context).primaryColor,
+      //   title: const Text("Product Details"),
+      // ),
       body: Column(
           //mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -124,8 +132,11 @@ class _ProductDetailsState extends State<ProductDetails> {
             ),
             Padding(
               padding: const EdgeInsets.all(15.0),
-              child: MaterialButton(
-                onPressed: () {},
+              child: Consumer<Cart>(builder: (context, cart, child) {
+                return MaterialButton(
+                onPressed: () {
+                  cart.add(products[product_card.selectedProductID]);
+                },
                 color: Theme.of(context).primaryColor,
                 height: 50,
                 shape: RoundedRectangleBorder(
@@ -134,14 +145,15 @@ class _ProductDetailsState extends State<ProductDetails> {
                   width: double.infinity,
                   alignment: Alignment.center,
                   child: const Text(
-                    "Achter",
+                    "Add to cart",
                     style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                         color: Colors.white),
                   ),
                 ),
-              ),
+              );
+              },)
             )
           ]),
     );

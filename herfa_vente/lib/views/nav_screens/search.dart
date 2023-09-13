@@ -3,20 +3,20 @@ import 'package:herfa_vente/controllers/product_controller.dart';
 import 'package:herfa_vente/models/product.dart';
 import 'package:herfa_vente/views/product_views/product_view.dart';
 
-class SearchScreen extends StatelessWidget {
-  const SearchScreen({super.key});
+// class SearchScreen extends StatelessWidget {
+//   const SearchScreen({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Text(
-        "Search cart Screen",
-        style: TextStyle(
-            fontSize: 30, fontWeight: FontWeight.bold, color: Colors.blue),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return const Center(
+//       child: Text(
+//         "Search cart Screen",
+//         style: TextStyle(
+//             fontSize: 30, fontWeight: FontWeight.bold, color: Colors.blue),
+//       ),
+//     );
+//   }
+// }
 
 class ProductSearch extends SearchDelegate {
   @override
@@ -93,6 +93,7 @@ class ProductSearch extends SearchDelegate {
 
   @override
   Widget buildSuggestions(BuildContext context) {
+    // print("This is the context : "+context.toString());
 
     List<Product>? filtreProducts = products.where((element) => element.name.toLowerCase().startsWith(query.toLowerCase())).toList();
     print("Number of filtered products: ${filtreProducts.length}");
