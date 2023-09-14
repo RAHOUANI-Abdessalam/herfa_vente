@@ -4,11 +4,11 @@ List<Product> products = [
   Product(
     id: 0,
     name: "Marteau",
-    category: "Plombier",
+    category: "Outillage",
     price: 1999,
-    imageUrl: "images/pub_image.jpg",
+    imageUrl: "images/products/marteau.jpg",
     images: [
-      "images/menuisier.jpg",
+      "images//products/marteau.jpg",
       "images/menuisier.jpg",
       "images/menuisier.jpg",
     ],
@@ -20,11 +20,11 @@ List<Product> products = [
   Product(
     id: 1,
     name: "Tournevis",
-    category: "Électricité",
+    category: "Autre",
     price: 2999,
-    imageUrl: "images/menuisier.jpg",
+    imageUrl: "images/products/tournevis.jpg",
     images: [
-      "images/pub_image.jpg",
+      "images/products/tournevis.jpg",
       "images/menuisier.jpg",
       "images/pub_image.jpg",
     ],
@@ -36,11 +36,11 @@ List<Product> products = [
   Product(
     id: 2,
     name: "Clé à molette",
-    category: "Pienture",
+    category: "Outillage",
     price: 1599,
-    imageUrl: "images/pub_image.jpg",
+    imageUrl: "images/products/cle_molette.jpg",
     images: [
-      "images/menuisier.jpg",
+      "images/products/cle_molette.jpg",
       "images/pub_image.jpg",
       "images/pub_image.jpg",
     ],
@@ -52,11 +52,11 @@ List<Product> products = [
   Product(
     id: 3,
     name: "Pince",
-    category: "placo",
+    category: "Outillage",
     price: 2499,
-    imageUrl: "images/menuisier.jpg",
+    imageUrl: "images/products/pince.jpg",
     images: [
-      "images/pub_image.jpg",
+      "images/products/pince.jpg",
       "images/pub_image.jpg",
       "images/menuisier.jpg",
     ],
@@ -68,11 +68,11 @@ List<Product> products = [
   Product(
     id: 4,
     name: "Ciseaux à bois",
-    category: "Droguerie",
+    category: "Outillage",
     price: 3999,
-    imageUrl: "images/pub_image.jpg",
+    imageUrl: "images/products/ciseaux_a_bois.jpg",
     images: [
-      "images/pub_image.jpg",
+      "images/products/ciseaux_a_bois.jpg",
       "images/menuisier.jpg",
       "images/pub_image.jpg",
     ],
@@ -84,11 +84,11 @@ List<Product> products = [
   Product(
     id: 5,
     name: "Peinture murale",
-    category: "Outillage",
+    category: "Pienture",
     price: 999,
-    imageUrl: "images/pub_image.jpg",
+    imageUrl: "images/peinture.jpg",
     images: [
-      "images/menuisier.jpg",
+      "images/peinture.jpg",
       "images/pub_image.jpg",
       "images/menuisier.jpg",
     ],
@@ -100,11 +100,11 @@ List<Product> products = [
   Product(
     id: 6,
     name: "Papier de verre",
-    category: "Outiels sécurité",
+    category: "Outillage",
     price: 4499,
-    imageUrl: "images/pub_image.jpg",
+    imageUrl: "images/products/papier_verre.jpg",
     images: [
-      "images/pub_image.jpg",
+      "images/products/papier_verre.jpg",
       "images/menuisier.jpg",
       "images/pub_image.jpg",
     ],
@@ -116,11 +116,11 @@ List<Product> products = [
   Product(
     id: 7,
     name: "Disjoncteurs",
-    category: "Automobil",
+    category: "Électricité",
     price: 3499,
-    imageUrl: "images/pub_image.jpg",
+    imageUrl: "images/products/disjoncteur.jpg",
     images: [
-      "images/menuisier.jpg",
+      "images/products/disjoncteur.jpg",
       "images/pub_image.jpg",
       "images/pub_image.jpg",
     ],
@@ -132,11 +132,11 @@ List<Product> products = [
   Product(
     id: 8,
     name: "Scie circulaire",
-    category: "agriculture",
+    category: "placo",
     price: 3499,
-    imageUrl: "images/menuisier.jpg",
+    imageUrl: "images/products/scie_circulaire.jpg",
     images: [
-      "images/pub_image.jpg",
+      "images/products/scie_circulaire.jpg",
       "images/menuisier.jpg",
       "images/pub_image.jpg",
     ],
@@ -150,9 +150,9 @@ List<Product> products = [
     name: "Tôle ondulée",
     category: "Construction",
     price: 3499,
-    imageUrl: "images/pub_image.jpg",
+    imageUrl: "images/products/tole_ondulee.jpg",
     images: [
-      "images/menuisier.jpg",
+      "images/products/tole_ondulee.jpg",
       "images/pub_image.jpg",
       "images/pub_image.jpg",
     ],
@@ -164,11 +164,11 @@ List<Product> products = [
   Product(
     id: 10,
     name: "Charnières",
-    category: "Central a beton",
+    category: "Construction",
     price: 3499,
-    imageUrl: "images/menuisier.jpg",
+    imageUrl: "images/products/charnieres.jpg",
     images: [
-      "images/pub_image.jpg",
+      "images/products/charnieres.jpg",
       "images/pub_image.jpg",
       "images/menuisier.jpg",
     ],
@@ -180,11 +180,11 @@ List<Product> products = [
   Product(
     id: 11,
     name: "Lunettes de protection",
-    category: "Métal",
+    category: "Outils de sécurité",
     price: 3499,
-    imageUrl: "images/pub_image.jpg",
+    imageUrl: "images/products/lunettes_protection.jpg",
     images: [
-      "images/pub_image.jpg",
+      "images/products/lunettes_protection.jpg",
       "images/menuisier.jpg",
       "images/pub_image.jpg",
     ],
@@ -196,11 +196,11 @@ List<Product> products = [
     Product(
     id: 12,
     name: "Genouillères",
-    category: "Materion d'ocassion",
+    category: "Autres",
     price: 3499,
-    imageUrl: "images/pub_image.jpg",
+    imageUrl: "images/products/genouilleres.jpg",
     images: [
-      "images/pub_image.jpg",
+      "images/products/genouilleres.jpg",
       "images/menuisier.jpg",
       "images/pub_image.jpg",
     ],
@@ -211,12 +211,12 @@ List<Product> products = [
   ),
     Product(
     id: 13,
-    name: "Compas",
+    name: "Boussole",
     category: "Autres",
     price: 3499,
-    imageUrl: "images/pub_image.jpg",
+    imageUrl: "images/products/compas.jpg",
     images: [
-      "images/pub_image.jpg",
+      "images/products/compas.jpg",
       "images/menuisier.jpg",
       "images/pub_image.jpg",
     ],
@@ -228,11 +228,11 @@ List<Product> products = [
     Product(
     id: 14,
     name: "Joints d'étanchéité",
-    category: "Autres",
+    category: "Plombier",
     price: 3499,
-    imageUrl: "images/pub_image.jpg",
+    imageUrl: "images/products/joints_d_etancheite.jpg",
     images: [
-      "images/pub_image.jpg",
+      "images/products/joints_d_etancheite.jpg",
       "images/menuisier.jpg",
       "images/pub_image.jpg",
     ],
@@ -244,11 +244,11 @@ List<Product> products = [
     Product(
     id: 15,
     name: "Tondeuse à gazon",
-    category: "Autres",
+    category: "agriculture",
     price: 3499,
-    imageUrl: "images/pub_image.jpg",
+    imageUrl: "images/products/tondeuse_gazon.jpg",
     images: [
-      "images/pub_image.jpg",
+      "images/products/tondeuse_gazon.jpg",
       "images/menuisier.jpg",
       "images/pub_image.jpg",
     ],
@@ -260,11 +260,11 @@ List<Product> products = [
     Product(
     id: 16,
     name: "Brouette",
-    category: "Autres",
+    category: "Outillage",
     price: 3499,
-    imageUrl: "images/pub_image.jpg",
+    imageUrl: "images/products/brouette.jpg",
     images: [
-      "images/pub_image.jpg",
+      "images/products/brouette.jpg",
       "images/menuisier.jpg",
       "images/pub_image.jpg",
     ],

@@ -1,3 +1,4 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:herfa_vente/models/command.dart';
 import 'package:herfa_vente/controllers/commandsProvider.dart';
@@ -35,7 +36,7 @@ class _MyCommandsScreenState extends State<MyCommandsScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "My commands",
+                      "Mes commandes",
                       style:
                           TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                     ),
@@ -65,7 +66,7 @@ class _MyCommandsScreenState extends State<MyCommandsScreen> {
                               ),
                             ),
                             subtitle: Text(
-                                "Created on: ${command.createdAt.toString()}"),
+                                "Ajoutée en: ${command.createdAt.toString()}"),
                             leading: IconButton(
                                 onPressed: () {},
                                 icon: Icon(
@@ -99,7 +100,7 @@ class _MyCommandsScreenState extends State<MyCommandsScreen> {
   }
 
   // Function to show the command input dialog
-  void _showCommandInputDialog(BuildContext context) {
+  void _showCommandInputDialog(BuildContext context2) {
     showDialog(
       barrierDismissible: false,
       context: context,
@@ -109,7 +110,7 @@ class _MyCommandsScreenState extends State<MyCommandsScreen> {
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
           elevation: 10,
           title: Text(
-            "New Command",
+            "Nouvelle commande",
             style: TextStyle(fontSize: 20, color: Colors.black),
           ),
           actions: [
@@ -132,13 +133,31 @@ class _MyCommandsScreenState extends State<MyCommandsScreen> {
 
                         // Clear the text field
                         textEditingController.clear();
-                      }
 
-                      // Close the dialog
-                      Navigator.of(context).pop();
+                        // Close the dialog
+                        Navigator.of(context).pop();
+
+                        AwesomeDialog(
+                          context: context2,
+                          animType: AnimType.leftSlide,
+                          headerAnimationLoop: false,
+                          dialogType: DialogType.success,
+                          showCloseIcon: true,
+                          title: "succès",
+                          desc:
+                              "Votre commande a été ajoutée, vous allez recevoir un appel téléphonique",
+                          btnOkOnPress: () {
+                            debugPrint('OnClcik');
+                          },
+                          btnOkIcon: Icons.check_circle,
+                          // onDismissCallback: (type) {
+                          //   debugPrint('Dialog Dissmiss from callback $type');
+                          // },
+                        ).show();
+                      }
                     },
                     child: Text(
-                      "Confirm",
+                      "confirmer",
                       style: TextStyle(
                           color: Theme.of(context).primaryColor, fontSize: 16),
                     ));
@@ -150,17 +169,17 @@ class _MyCommandsScreenState extends State<MyCommandsScreen> {
                   Navigator.of(context).pop();
                 },
                 child: const Text(
-                  "Exit",
+                  "quitter",
                   style: TextStyle(color: Colors.grey),
                 ))
           ],
           content: TextFormField(
             controller: textEditingController,
-            maxLines: 10,
-            minLines: 1,
-            style: TextStyle(fontSize: 20),
+            maxLines: 15,
+            minLines: 4,
+            style: TextStyle(fontSize: 16),
             decoration: InputDecoration(
-                labelText: "Add command",
+                labelText: "Ajouter la commande",
                 labelStyle: TextStyle(fontSize: 18),
                 floatingLabelStyle: TextStyle(fontSize: 18),
                 border: OutlineInputBorder(

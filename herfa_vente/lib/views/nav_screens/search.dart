@@ -20,6 +20,9 @@ import 'package:herfa_vente/views/product_views/product_view.dart';
 
 class ProductSearch extends SearchDelegate {
   @override
+  String get searchFieldLabel => 'Rechercher';
+
+  @override
   List<Widget>? buildActions(BuildContext context) {
     return [
       IconButton(
@@ -40,13 +43,16 @@ class ProductSearch extends SearchDelegate {
         },
         icon: Icon(
           Icons.arrow_back,
-        color: Theme.of(context).primaryColor,
+          color: Theme.of(context).primaryColor,
         ));
   }
 
   @override
   Widget buildResults(BuildContext context) {
-    List<Product>? filtreProducts = products.where((element) => element.name.toLowerCase().startsWith(query.toLowerCase())).toList();
+    List<Product>? filtreProducts = products
+        .where((element) =>
+            element.name.toLowerCase().startsWith(query.toLowerCase()))
+        .toList();
     return SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
@@ -54,9 +60,9 @@ class ProductSearch extends SearchDelegate {
             Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 15.0,left: 15.0),
+                  padding: const EdgeInsets.only(top: 15.0, left: 15.0),
                   child: Text(
-                    "Results",
+                    "Résultats",
                     style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
@@ -66,27 +72,27 @@ class ProductSearch extends SearchDelegate {
               ],
             ),
             Padding(
-      padding: const EdgeInsets.all(15.0),
-      child: GridView.builder(
-        shrinkWrap: true,
-          physics: NeverScrollableScrollPhysics(),
-          //shrinkWrap: true,              ////////////////////////////////////////////////////////
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2, // 2 columns
-                childAspectRatio: 0.8, // Adjust as needed
+              padding: const EdgeInsets.all(15.0),
+              child: GridView.builder(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                //shrinkWrap: true,              ////////////////////////////////////////////////////////
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2, // 2 columns
+                  childAspectRatio: 0.8, // Adjust as needed
+                ),
+                itemCount:
+                    query == "" ? products.length : filtreProducts.length,
+                itemBuilder: (context, index) {
+                  if (query == "") {
+                    return product_card(product: products[index]);
+                  } else {
+                    return product_card(product: filtreProducts[index]);
+                  }
+                  //query == "" ? product_card(product: products[index]):
+                },
               ),
-              itemCount: query == "" ? products.length : filtreProducts.length,
-              itemBuilder: (context, index) {
-                if(query == ""){
-                  return product_card(product: products[index]);
-                }else{
-                  return product_card(product: filtreProducts[index]);
-                }
-                //query == "" ? product_card(product: products[index]):
-                
-              },
             ),
-    ),
           ],
         ));
   }
@@ -95,9 +101,12 @@ class ProductSearch extends SearchDelegate {
   Widget buildSuggestions(BuildContext context) {
     // print("This is the context : "+context.toString());
 
-    List<Product>? filtreProducts = products.where((element) => element.name.toLowerCase().startsWith(query.toLowerCase())).toList();
+    List<Product>? filtreProducts = products
+        .where((element) =>
+            element.name.toLowerCase().startsWith(query.toLowerCase()))
+        .toList();
     print("Number of filtered products: ${filtreProducts.length}");
-    
+
     return SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
@@ -105,7 +114,7 @@ class ProductSearch extends SearchDelegate {
             Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 15.0,left: 15.0),
+                  padding: const EdgeInsets.only(top: 15.0, left: 15.0),
                   child: Text(
                     "Seggestions",
                     style: TextStyle(
@@ -117,29 +126,28 @@ class ProductSearch extends SearchDelegate {
               ],
             ),
             Padding(
-      padding: const EdgeInsets.all(15.0),
-      child: GridView.builder(
-        shrinkWrap: true,
-          physics: NeverScrollableScrollPhysics(),
-          //shrinkWrap: true,              ////////////////////////////////////////////////////////
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2, // 2 columns
-                childAspectRatio: 0.8, // Adjust as needed
+              padding: const EdgeInsets.all(15.0),
+              child: GridView.builder(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                //shrinkWrap: true,              ////////////////////////////////////////////////////////
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2, // 2 columns
+                  childAspectRatio: 0.8, // Adjust as needed
+                ),
+                itemCount:
+                    query == "" ? products.length : filtreProducts.length,
+                itemBuilder: (context, index) {
+                  if (query == "") {
+                    return product_card(product: products[index]);
+                  } else {
+                    return product_card(product: filtreProducts[index]);
+                  }
+                  //query == "" ? product_card(product: products[index]):
+                },
               ),
-              itemCount: query == "" ? products.length : filtreProducts.length,
-              itemBuilder: (context, index) {
-                if(query == ""){
-                  return product_card(product: products[index]);
-                }else{
-                  return product_card(product: filtreProducts[index]);
-                }
-                //query == "" ? product_card(product: products[index]):
-                
-              },
             ),
-    ),
           ],
         ));
   }
-
 }

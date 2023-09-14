@@ -10,10 +10,10 @@ class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
 
   List imageList = [
-    {"id": 1, "image_path": 'images/pub_image.jpg'},
-    {"id": 2, "image_path": 'images/pub_image.jpg'},
-    {"id": 3, "image_path": 'images/pub_image.jpg'},
-    {"id": 4, "image_path": 'images/pub_image.jpg'},
+    {"id": 1, "image_path": 'images/autre.webp'},
+    {"id": 2, "image_path": 'images/autre.webp'},
+    {"id": 3, "image_path": 'images/autre.webp'},
+    {"id": 4, "image_path": 'images/autre.webp'},
   ];
 
   @override
@@ -32,7 +32,7 @@ class HomeScreen extends StatelessWidget {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(10),
                           child: Image.asset(item['image_path'],
-                              fit: BoxFit.cover, width: double.infinity),
+                              fit: BoxFit.fill, width: double.infinity,height: 150,),
                         ),
                       ),
                     ))
@@ -41,7 +41,7 @@ class HomeScreen extends StatelessWidget {
               autoPlay: true,
               aspectRatio: 2.4,
               enlargeCenterPage: true,
-              viewportFraction: 0.7, // Adjust this value for spacing
+              viewportFraction: 0.8, // Adjust this value for spacing
             ),
           ),
           Padding(

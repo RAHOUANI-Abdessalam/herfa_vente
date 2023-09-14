@@ -17,10 +17,10 @@ class _ProductDetailsState extends State<ProductDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-          preferredSize:
-              Size.fromHeight(kToolbarHeight), // Set the preferred height
-          child: MyAppBar(),
-        ),
+        preferredSize:
+            Size.fromHeight(kToolbarHeight), // Set the preferred height
+        child: MyAppBar(),
+      ),
       // AppBar(
       //   backgroundColor: Theme.of(context).primaryColor,
       //   title: const Text("Product Details"),
@@ -131,30 +131,38 @@ class _ProductDetailsState extends State<ProductDetails> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Consumer<Cart>(builder: (context, cart, child) {
-                return MaterialButton(
-                onPressed: () {
-                  cart.add(products[product_card.selectedProductID]);
-                },
-                color: Theme.of(context).primaryColor,
-                height: 50,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15)),
-                child: Container(
-                  width: double.infinity,
-                  alignment: Alignment.center,
-                  child: const Text(
-                    "Add to cart",
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white),
-                  ),
-                ),
-              );
-              },)
-            )
+                padding: const EdgeInsets.all(15.0),
+                child: Consumer<Cart>(
+                  builder: (context, cart, child) {
+                    return MaterialButton(
+                      onPressed: () {
+                        cart.add(products[product_card.selectedProductID]);
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            behavior: SnackBarBehavior.floating,
+                            margin: EdgeInsets.only(bottom: 100,left: 20,right: 20),
+                            content: Text("Le produit a été ajouté au panier",textAlign: TextAlign.center,),
+                          ),
+                        );
+                      },
+                      color: Theme.of(context).primaryColor,
+                      height: 50,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15)),
+                      child: Container(
+                        width: double.infinity,
+                        alignment: Alignment.center,
+                        child: const Text(
+                          "Add to cart",
+                          style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white),
+                        ),
+                      ),
+                    );
+                  },
+                ))
           ]),
     );
   }
